@@ -26,6 +26,7 @@ bio: Anything related to SDR, Machine-Learning, Wireless Communications or Robot
 
 # Interests to show in About widget
 interests:
+  - Robotics
   - Machine-Learning
   - Software Defined Radio
   - Wireless Communications
@@ -84,7 +85,7 @@ email: 'yago.lizarribar@gmail.com'
 highlight_name: true
 ---
 
-I'm a PhD Student at IMDEA Networks. I work on IoT, Spectrum Sensing, Software Defined Radio and Localization. 
+Hey! I'm a PhD Student at IMDEA Networks. I work on IoT, Spectrum Sensing, Software Defined Radio and Localization. 
 
 🚧 Site is under construction! 🚧
 {style="text-align: left;"}
