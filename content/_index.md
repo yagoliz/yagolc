@@ -209,7 +209,7 @@ sections:
       title: Contact
       subtitle:
       text: |-
-        You can email me if you have great job opportunities ;)
+        Contact me if you want to ask me something!
       # Contact (add or remove contact options as necessary)
       email: yago.lizarribar@gmail.com
       address:

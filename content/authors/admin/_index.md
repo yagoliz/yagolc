@@ -86,5 +86,5 @@ highlight_name: true
 
 I'm a PhD Student at IMDEA Networks. I work on IoT, Spectrum Sensing, Software Defined Radio and Localization. 
 
-🚧 Beware, this site is under heavy construction! 🚧
+🚧 Site is under construction! 🚧
 {style="text-align: left;"}
