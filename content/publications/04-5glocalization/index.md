@@ -31,7 +31,9 @@ abstract: The 3GPP has recently made the inclusion of positioning services a pri
 summary: The 3GPP has recently made the inclusion of positioning services a priority in future generations of cellular networks, thus providing an opportunity for these networks to serve as fertile ground for the emergence of new service-based applications. This article offers a comprehensive review of these factors and provides a state-of-the-art overview of 5G positioning and its support in SDR-based platforms.
 
 tags:
-- 5G Localization, SDR, NLLS
+- 5G Localization
+- SDR
+- NLLS
 featured: true
 
 # links:
