@@ -31,9 +31,11 @@ abstract: Given the availability of lightweight radio and processing technology,
 summary: Given the availability of lightweight radio and processing technology, it becomes feasible to imagine spectrum sensing systems using weather balloons. Such balloons navigate the airspace up to 40 km, and can provide a bird's eye and clear view of terrestrial, as well as aerial spectrum use. In this paper, we present SkySense, which is an extension of the Electrosense sensing framework with mobile GPS-located sensors and local data logging. In addition, we present 6 different sensing campaigns, targeting multiple terrestrial or aerial technologies such as ADS-B, AIS or LTE.
 
 tags:
-- mmWave
-- beamforming
-- inertial sensors
+- Spectrum Monitoring
+- High-Altitude Balloons
+- SDR
+- LTE
+- ADS-B
 featured: true
 
 # links:
