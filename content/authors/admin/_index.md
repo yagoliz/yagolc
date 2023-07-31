@@ -1,10 +1,10 @@
 ---
 # Display name
-title: Yago Lizarribar
+title: Yago Lizarribar Carrillo
 
 # Full name (for SEO)
 first_name: Yago
-last_name: Lizarribar
+last_name: Lizarribar Carrillo
 
 # Status emoji
 status:
