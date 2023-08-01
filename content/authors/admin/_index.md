@@ -19,7 +19,7 @@ role: PhD Student
 # Organizations/Affiliations to show in About widget
 organizations:
   - name: IMDEA Networks
-    url: networks.imdea.org
+    url: https://networks.imdea.org
 
 # Short bio (displayed in user profile at end of posts)
 bio: Anything related to SDR, Machine-Learning, Wireless Communications or Robotics and I'm all ears.
