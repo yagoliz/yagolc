@@ -10,6 +10,10 @@ last_name: Lizarribar Carrillo
 status:
   icon: ☕️
 
+header:
+  caption: ''
+  image: 'donostia.avif'
+
 # Is this the primary user of the site?
 superuser: true
 
