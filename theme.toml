@@ -40,7 +40,7 @@ features = ["page builder", "widgets", "themes", "search", "research publication
 
 [author]
 name = "Yago Lizarribar"
-homepage = "https://yagolc.net"
+homepage = "https://yagolc.me"
 
 # If porting an existing theme
 [original]

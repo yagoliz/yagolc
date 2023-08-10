@@ -12,7 +12,7 @@ status:
 
 header:
   caption: ''
-  image: 'donostia.avif'
+  image: ''
 
 # Is this the primary user of the site?
 superuser: true

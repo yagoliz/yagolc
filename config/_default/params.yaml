@@ -9,7 +9,7 @@ appearance:
   theme_day: minimal
   theme_night: minimal
   font: native
-  font_size: L
+  font_size: XL
 
 # SEO
 marketing:
@@ -44,7 +44,7 @@ header:
 
 footer:
   copyright:
-    notice: '© {year} Me. This work is licensed under {license}'
+    notice: '© {year} Yago Lizarribar Carrillo. This work is licensed under {license}'
     license:
       enable: true
       allow_derivatives: false
