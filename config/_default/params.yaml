@@ -7,7 +7,7 @@
 
 appearance:
   theme_day: Minimal
-  theme_night: Mr Robot
+  theme_night: Minimal
   font: native
   font_size: XL
 
@@ -31,13 +31,14 @@ marketing:
 # Site header
 social: ''
 header:
+  altlogo: 'ylc'
   navbar:
     enable: true
     align: l
     show_logo: true
     show_language: false
     show_day_night: true
-    show_search: true
+    show_search: false
     highlight_active_link: true
 
 # Site footer

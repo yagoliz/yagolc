@@ -45,7 +45,7 @@ url_pdf: 'https://dspace.networks.imdea.org/bitstream/handle/20.500.12761/818/El
 # url_code: ''
 url_dataset: ''
 url_poster: ''
-url_project: 'electrosense.org'
+url_project: 'https://electrosense.org'
 # url_slides: ''
 # url_source: ''
 url_video: 'https://www.youtube.com/watch?v=VQA75pOPw7I&t=2s'

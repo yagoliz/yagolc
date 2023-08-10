@@ -184,7 +184,7 @@ sections:
       title: Featured Publications
       filters:
         folders:
-          - publications
+          - publication
         featured_only: true
     design:
       columns: '2'
@@ -193,10 +193,10 @@ sections:
     content:
       title: Recent Publications
       text: |-
-        ### [View more publications...](./publications/)
+        ### [View more publications...](./publication/)
       filters:
         folders:
-          - publications
+          - publication
         exclude_featured: false
       sort_by: 'Date'
       sort_ascending: false

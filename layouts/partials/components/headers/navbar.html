@@ -25,7 +25,7 @@
             {{with site.Params.header.image.width}}width="{{.}}"{{end}}
             {{with site.Params.header.image.height}}height="{{.}}"{{end}}>
           {{- else -}}
-            {{- site.Title -}}
+            {{- site.Params.header.altlogo -}}
           {{- end -}}
         </a>
       </div>
@@ -46,7 +46,7 @@
           {{with site.Params.header.image.width}}width="{{.}}"{{end}}
           {{with site.Params.header.image.height}}height="{{.}}"{{end}}>
         {{- else -}}
-          {{- site.Title -}}
+          {{- site.Params.header.altlogo -}}
         {{- end -}}
         </a>
       </div>
