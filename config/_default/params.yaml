@@ -6,8 +6,8 @@
 # Appearance
 
 appearance:
-  theme_day: minimal
-  theme_night: minimal
+  theme_day: Minimal
+  theme_night: Mr Robot
   font: native
   font_size: XL
 
@@ -18,7 +18,7 @@ marketing:
     local_business_type: ''
     org_name: ''
     description: 'Researcher @ IMDEA Networks. Sharing works and thoughts'
-    twitter: 'yagoliz'
+    twitter: ''
   analytics:
     google_analytics: ''
     baidu_tongji: ''
@@ -29,15 +29,15 @@ marketing:
     baidu: ''
 
 # Site header
-
+social: ''
 header:
   navbar:
     enable: true
-    align: r
+    align: l
     show_logo: true
     show_language: false
     show_day_night: true
-    show_search: false
+    show_search: true
     highlight_active_link: true
 
 # Site footer

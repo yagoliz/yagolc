@@ -57,15 +57,13 @@ education:
 #   For an email link, use "fas" icon pack, "envelope" icon, and a link in the
 #   form "mailto:your-email@example.com" or "/#contact" for contact widget.
 social:
-  - icon: envelope
+  - icon: paper-plane
     icon_pack: fas
     link: '/#contact'
   - icon: twitter
     icon_pack: fab
     link: https://twitter.com/yagoliz
     label: Follow me on Twitter
-    display:
-      header: true
   - icon: graduation-cap # Alternatively, use `google-scholar` icon from `ai` icon pack
     icon_pack: fas
     link: https://scholar.google.co.uk/citations?user=7IsJtboAAAAJ&hl=en
@@ -91,5 +89,5 @@ highlight_name: true
 
 Hey! I'm a PhD Student at IMDEA Networks. I work on IoT, Spectrum Sensing, Software Defined Radio and Localization. 
 
-🚧 Site is under construction! 🚧
+🚧 Site is under active development! 🚧
 {style="text-align: left;"}
