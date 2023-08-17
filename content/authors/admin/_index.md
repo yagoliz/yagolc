@@ -87,7 +87,7 @@ email: 'yago.lizarribar@gmail.com'
 highlight_name: true
 ---
 
-Hey! I'm a PhD Student at IMDEA Networks. I work on IoT, Spectrum Sensing, Software Defined Radio and Localization. 
+Hey! I'm a PhD Student at IMDEA Networks. I work on IoT, Spectrum Sensing, Software Defined Radio and Localization. Previously I worked on robotics, specifically on lightweight autonomous vehicles.
 
-🚧 Site is under active development! 🚧
+I will soon finish my PhD (fingers crossed), so my life will shake up a bit in the coming months. 
 {style="text-align: left;"}
