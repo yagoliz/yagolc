@@ -28,55 +28,86 @@ sections:
           parallax: true
           # Text color (true=light, false=dark, or remove for the dynamic theme color).
         text_color_light: true
-  # - block: features
-  #   content:
-  #     title: Skills
-  #     items:
-  #       - name: R
-  #         description: 90%
-  #         icon: r-project
-  #         icon_pack: fab
-  #       - name: Statistics
-  #         description: 100%
-  #         icon: chart-line
-  #         icon_pack: fas
-  #       - name: Photography
-  #         description: 10%
-  #         icon: camera-retro
-  #         icon_pack: fas
-  # - block: experience
-  #   content:
-  #     title: Experience
-  #     # Date format for experience
-  #     #   Refer to https://wowchemy.com/docs/customization/#date-format
-  #     date_format: Jan 2006
-  #     # Experiences.
-  #     #   Add/remove as many `experience` items below as you like.
-  #     #   Required fields are `title`, `company`, and `date_start`.
-  #     #   Leave `date_end` empty if it's your current employer.
-  #     #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
-  #     items:
-  #       - title: CEO
-  #         company: GenCoin
-  #         company_url: ''
-  #         location: California
-  #         date_start: '2021-01-01'
-  #         date_end: ''
-  #         description: |2-
-  #             Responsibilities include:
-
-  #             * Analysing
-  #             * Modelling
-  #             * Deploying
-  #       - title: Professor of Semiconductor Physics
-  #         company: University X
-  #         company_url: ''
-  #         location: California
-  #         date_start: '2016-01-01'
-  #         date_end: '2020-12-31'
-  #         description: Taught electronic engineering and researched semiconductor physics.
-  #   design:
-  #     columns: '2'
+  - block: features
+    content:
+      title: What I usually do
+      items:
+        - name: Python
+          icon: python
+          icon_pack: fab
+        - name: Linux
+          icon: linux
+          icon_pack: fab
+        - name: Software-Defined Radio
+          icon: radio
+          icon_pack: fas
+        - name: Signal Processing
+          icon: wave-square
+          icon_pack: fas
+        - name: Robotics
+          icon: robot
+          icon_pack: fas
+        - name: Machine-Learning
+          icon: microchip
+          icon_pack: fas
+  - block: experience
+    content:
+      title: Experience
+      # Date format for experience
+      #   Refer to https://wowchemy.com/docs/customization/#date-format
+      date_format: Jan 2006
+      # Experiences.
+      #   Add/remove as many `experience` items below as you like.
+      #   Required fields are `title`, `company`, and `date_start`.
+      #   Leave `date_end` empty if it's your current employer.
+      #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
+      items:
+        - title: PhD Student
+          company: IMDEA Networks
+          company_url: 'networks.imdea.org'
+          location: Madrid
+          date_start: '2019-06-01'
+          date_end: ''
+          description: |2-
+            Developed and maintained the Electrosense network. Research mostly focused on:
+              * Crowdsensing
+              * Software-Defined Radio
+              * Localization
+              * Signal Processing
+        - title: Research Assistant
+          company: MIT Media Lab
+          company_url: 'media.mit.edu'
+          location: Boston
+          date_start: '2017-09-01'
+          date_end: '2018-12-31'
+          description: |2-
+            Research on lightweight autonomous vehicles. In particular I worked on:
+              - Simultaneous Localization and Mapping (SLAM)
+              - Obstacle Detection
+              - Vehicle UX
+        - title: Engineer
+          company: JL Ingenieria
+          company_url: 'https://www.jlizarribar.es/'
+          location: San Sebastian
+          date_start: '2017-06-01'
+          date_end: '2017-08-31'
+          description:
+        - title: Engineer
+          company: JL Ingenieria
+          company_url: 'https://www.jlizarribar.es/'
+          location: San Sebastian
+          date_start: '2016-06-01'
+          date_end: '2016-08-31'
+          description: 
+        - title: Research Assistant
+          company: German Aerospace Center (DLR)
+          company_url: 'https://dlr.de'
+          location: Munich
+          date_start: '2015-06-01'
+          date_end: '2015-08-31'
+          description: 
+    design:
+      columns: '2'
   # - block: accomplishments
   #   content:
   #     # Note: `&shy;` is used to add a 'soft' hyphen in a long heading.
@@ -116,33 +147,33 @@ sections:
   #         url: ''
   #   design:
   #     columns: '2'
-  # - block: collection
-  #   id: posts
-  #   content:
-  #     title: Recent Posts
-  #     subtitle: ''
-  #     text: ''
-  #     # Choose how many pages you would like to display (0 = all pages)
-  #     count: 5
-  #     # Filter on criteria
-  #     filters:
-  #       folders:
-  #         - post
-  #       author: ""
-  #       category: ""
-  #       tag: ""
-  #       exclude_featured: false
-  #       exclude_future: false
-  #       exclude_past: false
-  #       publication_type: ""
-  #     # Choose how many pages you would like to offset by
-  #     offset: 0
-  #     # Page order: descending (desc) or ascending (asc) date.
-  #     order: desc
-  #   design:
-  #     # Choose a layout view
-  #     view: compact
-  #     columns: '2'
+  - block: collection
+    id: posts
+    content:
+      title: Recent Posts
+      subtitle: ''
+      text: ''
+      # Choose how many pages you would like to display (0 = all pages)
+      count: 5
+      # Filter on criteria
+      filters:
+        folders:
+          - post
+        author: ""
+        category: ""
+        tag: ""
+        exclude_featured: false
+        exclude_future: false
+        exclude_past: false
+        publication_type: ""
+      # Choose how many pages you would like to offset by
+      offset: 0
+      # Page order: descending (desc) or ascending (asc) date.
+      order: desc
+    design:
+      # Choose a layout view
+      view: compact
+      columns: '2'
   # - block: portfolio
   #   id: projects
   #   content:
