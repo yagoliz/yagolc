@@ -34,7 +34,7 @@ tags:
 - 5G Localization
 - SDR
 - NLLS
-featured: true
+featured: false
 
 # links:
 # - name: ""
