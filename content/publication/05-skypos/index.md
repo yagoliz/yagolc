@@ -6,7 +6,7 @@ title: 'SkyPos: Real-World Evaluation of Self-Positioning with Aircraft Signals 
 subtitle: ''
 summary: ''
 authors:
-- Yago Lizarribar
+- admin
 - Domenico Giustiniano
 - Gérôme Bovet
 - Vincent Lenders
