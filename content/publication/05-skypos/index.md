@@ -48,6 +48,5 @@ abstract: Positioning based on aircraft signals has been proposed as an alternat
   of aircraft around Europe. Our results show that we can achieve median accuracy
   down to 10 m in seconds, enabling almost real-time positioning or location verification
   using aircraft signals at scale
-publication: '*5G/6G Precise Positioning on Cooperative Intelligent Transportation
-  Systems (C-ITS) and Connected Automated Vehicles (CAV)*'
+publication: '*IEEE Journal on Selected Areas in Communications*'
 ---
