@@ -21,6 +21,18 @@ lastmod: 2023-08-18T11:42:25+02:00
 featured: true
 draft: false
 
+# links:
+# - name: ""
+#   url: ""
+url_pdf: 'https://dspace.networks.imdea.org/handle/20.500.12761/1732'
+# url_code: ''
+url_dataset: 'https://zenodo.org/record/4298999'
+url_poster: ''
+url_project: ''
+# url_slides: ''
+# url_source: ''
+url_video: '
+
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
 # Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
