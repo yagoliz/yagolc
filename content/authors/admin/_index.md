@@ -39,7 +39,7 @@ interests:
 # Education to show in About widget
 education:
   courses:
-    - course: PhD in Telematcis Engineering
+    - course: PhD in Telematics Engineering
       institution: Carlos III University
       year: Ongoing
     - course: MSc in Telematics Engineering
