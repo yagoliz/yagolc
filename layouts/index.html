@@ -1,0 +1,22 @@
+{{ define "head" }}
+<meta name="description" content={{ .Site.Params.description }}>
+<link rel="stylesheet" href="{{ .Site.Params.assetPath }}/css/index.css" media="all">
+<link rel="stylesheet" href="{{ .Site.Params.assetPath }}/css/projects.css" media="all">
+
+<!-- fontawesome -->
+<script src="https://kit.fontawesome.com/70da981e06.js" crossorigin="anonymous"></script>
+{{ end }}
+
+{{ define "title" }}
+{{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+{{- partial "sections/hero/index.html" . -}}
+{{- partial "sections/about.html" . -}}
+{{- partial "sections/experience.html" . -}}
+{{- partial "sections/education.html" . -}}
+{{- partial "sections/projects.html" . -}}
+{{- partial "sections/achievements.html" . -}}
+{{- partial "sections/contact.html" . -}}
+{{ end }}
