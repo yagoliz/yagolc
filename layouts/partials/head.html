@@ -67,7 +67,31 @@
     }
 
     html {
-        background-color: var(--background-color) !important;
+        min-height: 100vh;
+        background-color: var(--background-color);
+    }
+
+    body {
+        /* Your existing body styles stay */
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+        background-color: var(--background-color);
+    }
+
+    /* Dark mode specific */
+    body.dark {
+        background-color: var(--background-color-dark) !important;
+    }
+
+    body.dark html {
+        background-color: var(--background-color-dark) !important;
+    }
+
+    /* Smooth transition for theme switching */
+    html, 
+    body {
+        transition: background-color 0.3s ease;
     }
 
     body::-webkit-scrollbar {
