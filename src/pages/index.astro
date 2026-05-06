@@ -1,5 +1,13 @@
 ---
 import Base from "../layouts/Base.astro";
+import { getCollection } from "astro:content";
+
+const latestPost = (await getCollection("blog"))
+    .filter((post) => !post.data.draft)
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())[0];
+
+const latestPub = (await getCollection("publications"))
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())[0];
 
 const socialLinks = [
     {
@@ -59,6 +67,41 @@ const socialLinks = [
         </div>
         <img src="/images/me.jpg" alt="Yago Lizarribar" class="avatar" />
     </section>
+
+    <div class="latest-sections">
+        {latestPost && (
+            <section class="latest-section">
+                <h2>Latest Post</h2>
+                <a href={`/blog/${latestPost.id}`} class="latest-card">
+                    <span class="latest-title">{latestPost.data.title}</span>
+                    <time datetime={latestPost.data.date.toISOString()}>
+                        {latestPost.data.date.toLocaleDateString("en-US", {
+                            year: "numeric",
+                            month: "short",
+                            day: "numeric",
+                        })}
+                    </time>
+                    {latestPost.data.description && (
+                        <p class="latest-desc">{latestPost.data.description}</p>
+                    )}
+                </a>
+            </section>
+        )}
+
+        {latestPub && (
+            <section class="latest-section">
+                <h2>Latest Publication</h2>
+                <a href={`/publications/${latestPub.id}`} class="latest-card">
+                    <span class="latest-title">{latestPub.data.title}</span>
+                    <span class="latest-authors">{latestPub.data.authors}</span>
+                    {latestPub.data.venue && (
+                        <span class="latest-venue">{latestPub.data.venue}</span>
+                    )}
+                    <span class="latest-year">{latestPub.data.date.getFullYear()}</span>
+                </a>
+            </section>
+        )}
+    </div>
 </Base>
 
 <style>
@@ -113,6 +156,66 @@ const socialLinks = [
     .social-links a:hover {
         color: var(--color-accent);
         text-decoration: none;
+    }
+
+    .latest-sections {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        max-width: var(--max-width);
+        margin: 0 auto;
+    }
+
+    .latest-section h2 {
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+        color: var(--color-text-muted);
+        font-weight: 500;
+    }
+
+    .latest-card {
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem;
+        padding: 1rem 1.25rem;
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        color: inherit;
+        text-decoration: none;
+        transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .latest-card:hover {
+        border-color: var(--color-accent);
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+        text-decoration: none;
+    }
+
+    .latest-title {
+        font-weight: 500;
+    }
+
+    .latest-card time,
+    .latest-year {
+        font-size: 0.85rem;
+        color: var(--color-text-muted);
+    }
+
+    .latest-desc {
+        font-size: 0.9rem;
+        color: var(--color-text-muted);
+        margin-top: 0.25rem;
+    }
+
+    .latest-authors {
+        font-size: 0.9rem;
+        color: var(--color-text-muted);
+    }
+
+    .latest-venue {
+        font-size: 0.9rem;
+        font-style: italic;
+        color: var(--color-text-muted);
     }
 
     @media (max-width: 700px) {
