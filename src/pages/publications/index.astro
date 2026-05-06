@@ -17,32 +17,12 @@ const pubs = (await getCollection("publications")).sort(
       <ul class="pub-list">
         {pubs.map((pub) => (
           <li>
-            <span class="pub-title">
-              {pub.data.link ? (
-                <a href={pub.data.link} target="_blank" rel="noopener noreferrer">
-                  {pub.data.title}
-                </a>
-              ) : (
-                pub.data.title
-              )}
-            </span>
-            <span class="pub-authors">{pub.data.authors}</span>
-            {pub.data.venue && <span class="pub-venue">{pub.data.venue}</span>}
-            <span class="pub-year">
-              {pub.data.date.getFullYear()}
-              {pub.data.doi && (
-                <>
-                  {" · "}
-                  <a
-                    href={`https://doi.org/${pub.data.doi}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    DOI
-                  </a>
-                </>
-              )}
-            </span>
+            <a href={`/publications/${pub.id}`} class="pub-link">
+              <span class="pub-title">{pub.data.title}</span>
+              <span class="pub-authors">{pub.data.authors}</span>
+              {pub.data.venue && <span class="pub-venue">{pub.data.venue}</span>}
+              <span class="pub-year">{pub.data.date.getFullYear()}</span>
+            </a>
           </li>
         ))}
       </ul>
@@ -73,18 +53,23 @@ const pubs = (await getCollection("publications")).sort(
   }
 
   .pub-list li {
-    display: flex;
-    flex-direction: column;
-    gap: 0.15rem;
     border: 1px solid var(--color-border);
     border-radius: 8px;
-    padding: 1rem 1.25rem;
     transition: border-color 0.15s, box-shadow 0.15s;
   }
 
   .pub-list li:hover {
     border-color: var(--color-accent);
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  }
+
+  .pub-link {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: 1rem 1.25rem;
+    color: inherit;
+    text-decoration: none;
   }
 
   .pub-title {
