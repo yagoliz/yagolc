@@ -6,8 +6,9 @@ const latestPost = (await getCollection("blog"))
     .filter((post) => !post.data.draft)
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())[0];
 
-const latestPub = (await getCollection("publications"))
-    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())[0];
+const latestPub = (await getCollection("publications")).sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+)[0];
 
 const socialLinks = [
     {
@@ -69,38 +70,55 @@ const socialLinks = [
     </section>
 
     <div class="latest-sections">
-        {latestPost && (
-            <section class="latest-section">
-                <h2>Latest Post</h2>
-                <a href={`/blog/${latestPost.id}`} class="latest-card">
-                    <span class="latest-title">{latestPost.data.title}</span>
-                    <time datetime={latestPost.data.date.toISOString()}>
-                        {latestPost.data.date.toLocaleDateString("en-US", {
-                            year: "numeric",
-                            month: "short",
-                            day: "numeric",
-                        })}
-                    </time>
-                    {latestPost.data.description && (
-                        <p class="latest-desc">{latestPost.data.description}</p>
-                    )}
-                </a>
-            </section>
-        )}
+        {
+            latestPost && (
+                <section class="latest-section">
+                    <h2>Latest Post</h2>
+                    <a href={`/blog/${latestPost.id}`} class="latest-card">
+                        <span class="latest-title">
+                            {latestPost.data.title}
+                        </span>
+                        <time datetime={latestPost.data.date.toISOString()}>
+                            {latestPost.data.date.toLocaleDateString("en-US", {
+                                year: "numeric",
+                                month: "short",
+                                day: "numeric",
+                            })}
+                        </time>
+                        {latestPost.data.description && (
+                            <p class="latest-desc">
+                                {latestPost.data.description}
+                            </p>
+                        )}
+                    </a>
+                </section>
+            )
+        }
 
-        {latestPub && (
-            <section class="latest-section">
-                <h2>Latest Publication</h2>
-                <a href={`/publications/${latestPub.id}`} class="latest-card">
-                    <span class="latest-title">{latestPub.data.title}</span>
-                    <span class="latest-authors">{latestPub.data.authors}</span>
-                    {latestPub.data.venue && (
-                        <span class="latest-venue">{latestPub.data.venue}</span>
-                    )}
-                    <span class="latest-year">{latestPub.data.date.getFullYear()}</span>
-                </a>
-            </section>
-        )}
+        {
+            latestPub && (
+                <section class="latest-section">
+                    <h2>Latest Publication</h2>
+                    <a
+                        href={`/publications/${latestPub.id}`}
+                        class="latest-card"
+                    >
+                        <span class="latest-title">{latestPub.data.title}</span>
+                        <span class="latest-authors">
+                            {latestPub.data.authors}
+                        </span>
+                        {latestPub.data.venue && (
+                            <span class="latest-venue">
+                                {latestPub.data.venue}
+                            </span>
+                        )}
+                        <span class="latest-year">
+                            {latestPub.data.date.getFullYear()}
+                        </span>
+                    </a>
+                </section>
+            )
+        }
     </div>
 </Base>
 
@@ -181,7 +199,10 @@ const socialLinks = [
         border-radius: 8px;
         color: inherit;
         text-decoration: none;
-        transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+        transition:
+            border-color 0.15s,
+            box-shadow 0.15s,
+            transform 0.15s;
     }
 
     .latest-card:hover {
