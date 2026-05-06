@@ -63,7 +63,7 @@ Our paper *"Can't Hide Your Stride: Inferring Car Movement Patterns from Passive
 
 - [rtl_433 GitHub Discussion](https://github.com/merbanan/rtl_433/discussions/3487) — Discussion in the rtl_433 SDR project
 
-## Prensa en Espanol
+## Prensa en Español
 
 - [Sensores de presión de neumáticos: rastreo de vehículos](https://www.elmundo.es/motor/2026/03/02/69a55bfcfc6c8324368b4586.html) — El Mundo
 - [Un estudio español ha demostrado que los sensores de presión de los coches pueden ser usados para localizarnos](https://www.elespanol.com/omicrono/tecnologia/20260226/estudio-espanol-demostrado-sensores-presion-coches-pueden-usados-localizarnos/1003744146457_0.html) — El Español / Omicrono

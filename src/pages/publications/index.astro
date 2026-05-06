@@ -69,13 +69,22 @@ const pubs = (await getCollection("publications")).sort(
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
   }
 
   .pub-list li {
     display: flex;
     flex-direction: column;
     gap: 0.15rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+
+  .pub-list li:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
   }
 
   .pub-title {
