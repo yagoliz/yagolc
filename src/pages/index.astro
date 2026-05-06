@@ -121,8 +121,7 @@ const socialLinks = [
         width: 240px;
         height: 240px;
         border-radius: 12px;
-        border-color: magenta;
-        border: 10px;
+        border: 3px solid rgba(255, 255, 255, 0.8);
         object-fit: cover;
         flex-shrink: 0;
     }
@@ -182,12 +181,13 @@ const socialLinks = [
         border-radius: 8px;
         color: inherit;
         text-decoration: none;
-        transition: border-color 0.15s, box-shadow 0.15s;
+        transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
     }
 
     .latest-card:hover {
         border-color: var(--color-accent);
         box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+        transform: translateY(-2px);
         text-decoration: none;
     }
 
