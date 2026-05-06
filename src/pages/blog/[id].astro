@@ -1,0 +1,100 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({ params: { id: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Base title={`${post.data.title} — Yago Lizarribar`} description={post.data.description}>
+  <article class="narrow">
+    <header>
+      <h1>{post.data.title}</h1>
+      <time datetime={post.data.date.toISOString()}>
+        {post.data.date.toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        })}
+      </time>
+      {post.data.tags && (
+        <div class="tags">
+          {post.data.tags.map((tag: string) => (
+            <span class="tag">{tag}</span>
+          ))}
+        </div>
+      )}
+    </header>
+    <div class="prose">
+      <Content />
+    </div>
+    <a href="/blog" class="back">&larr; Back to blog</a>
+  </article>
+</Base>
+
+<style>
+  .narrow {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  header {
+    margin-bottom: 2rem;
+  }
+
+  h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  time {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+  }
+
+  .tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.75rem;
+  }
+
+  .tag {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.6rem;
+    background: var(--color-border);
+    border-radius: 4px;
+    color: var(--color-text-muted);
+  }
+
+  .prose {
+    margin-bottom: 3rem;
+  }
+  .prose :global(p) {
+    margin-bottom: 1rem;
+  }
+  .prose :global(h2) {
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  .prose :global(h3) {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .prose :global(ul),
+  .prose :global(ol) {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+  }
+  .prose :global(li) {
+    margin-bottom: 0.25rem;
+  }
+
+  .back {
+    font-size: 0.9rem;
+  }
+</style>

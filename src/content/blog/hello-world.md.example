@@ -1,0 +1,11 @@
+---
+title: "Hello World"
+date: 2026-05-06
+description: "A fresh start with Astro."
+tags:
+  - meta
+---
+
+Welcome to my new site! I've moved from Hugo to [Astro](https://astro.build) for a simpler, more flexible setup.
+
+Adding a new post is as easy as creating a Markdown file in `src/content/blog/`. That's it.

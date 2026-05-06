@@ -1,0 +1,100 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getCollection } from "astro:content";
+
+const pubs = (await getCollection("publications")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+---
+
+<Base title="Publications — Yago Lizarribar">
+  <div class="narrow">
+  <h1>Publications</h1>
+  {
+    pubs.length === 0 ? (
+      <p class="empty">No publications listed yet.</p>
+    ) : (
+      <ul class="pub-list">
+        {pubs.map((pub) => (
+          <li>
+            <span class="pub-title">
+              {pub.data.link ? (
+                <a href={pub.data.link} target="_blank" rel="noopener noreferrer">
+                  {pub.data.title}
+                </a>
+              ) : (
+                pub.data.title
+              )}
+            </span>
+            <span class="pub-authors">{pub.data.authors}</span>
+            {pub.data.venue && <span class="pub-venue">{pub.data.venue}</span>}
+            <span class="pub-year">
+              {pub.data.date.getFullYear()}
+              {pub.data.doi && (
+                <>
+                  {" · "}
+                  <a
+                    href={`https://doi.org/${pub.data.doi}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    DOI
+                  </a>
+                </>
+              )}
+            </span>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+  </div>
+</Base>
+
+<style>
+  .narrow {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  h1 {
+    margin-bottom: 2rem;
+  }
+
+  .empty {
+    color: var(--color-text-muted);
+  }
+
+  .pub-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .pub-list li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .pub-title {
+    font-weight: 500;
+  }
+
+  .pub-authors {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+  }
+
+  .pub-venue {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--color-text-muted);
+  }
+
+  .pub-year {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+</style>
