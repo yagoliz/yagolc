@@ -5,29 +5,83 @@ import { getCollection } from "astro:content";
 const pubs = (await getCollection("publications")).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
+
+const allTags = [...new Set(pubs.flatMap((p) => p.data.tags ?? []))].sort();
+const allTypes = [...new Set(pubs.map((p) => p.data.type).filter(Boolean))].sort();
 ---
 
 <Base title="Publications — Yago Lizarribar">
   <div class="narrow">
   <h1>Publications</h1>
+
+  <div class="filters">
+    <input
+      type="text"
+      class="search-input"
+      placeholder="Search publications..."
+      id="pub-search"
+    />
+
+    {allTags.length > 0 && (
+      <div class="filter-row">
+        <span class="filter-label">Topics</span>
+        <div class="filter-chips">
+          {allTags.map((tag) => (
+            <button class="tag-chip" data-filter="tag" data-value={tag}>{tag}</button>
+          ))}
+        </div>
+      </div>
+    )}
+
+    {allTypes.length > 0 && (
+      <div class="filter-row">
+        <span class="filter-label">Type</span>
+        <div class="filter-chips">
+          {allTypes.map((type) => (
+            <button class="tag-chip" data-filter="type" data-value={type}>{type}</button>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <div class="filter-meta">
+      <span class="result-count" id="result-count">Showing {pubs.length} of {pubs.length} publications</span>
+      <button class="clear-filters" id="clear-filters" style="display:none;">Clear filters</button>
+    </div>
+  </div>
+
   {
     pubs.length === 0 ? (
       <p class="empty">No publications listed yet.</p>
     ) : (
-      <ul class="pub-list">
+      <ul class="pub-list" id="pub-list">
         {pubs.map((pub) => (
-          <li>
+          <li
+            data-tags={JSON.stringify(pub.data.tags ?? [])}
+            data-type={pub.data.type ?? ""}
+            data-title={pub.data.title.toLowerCase()}
+            data-authors={pub.data.authors.toLowerCase()}
+            data-venue={(pub.data.venue ?? "").toLowerCase()}
+          >
             <a href={`/publications/${pub.id}`} class="pub-link">
               <span class="pub-title">{pub.data.title}</span>
               <span class="pub-authors">{pub.data.authors}</span>
               {pub.data.venue && <span class="pub-venue">{pub.data.venue}</span>}
               <span class="pub-year">{pub.data.date.getFullYear()}</span>
+              {pub.data.tags && pub.data.tags.length > 0 && (
+                <span class="pub-tags">
+                  {pub.data.tags.map((tag) => (
+                    <span class="tag-badge">{tag}</span>
+                  ))}
+                </span>
+              )}
             </a>
           </li>
         ))}
       </ul>
     )
   }
+  <p class="no-results" id="no-results" style="display:none;">No publications match your filters.</p>
   </div>
 </Base>
 
