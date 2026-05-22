@@ -3,4 +3,6 @@ title: "From Low-Cost Spectrum Monitoring to 5G Networks: Algorithms and Systems
 date: 2025-01-01
 authors: "Y Lizarribar"
 venue: "PhD Thesis, Universidad Carlos III de Madrid"
+tags: ["localization", "spectrum sensing", "5G"]
+type: "thesis"
 ---

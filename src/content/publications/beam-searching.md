@@ -4,4 +4,6 @@ date: 2021-01-01
 authors: "M Rea, D Giustiniano, PJ Mateo, Y Lizarribar, J Widmer"
 venue: "Computer Networks"
 doi: "10.1016/j.comnet.2021.108344"
+tags: ["5G", "mmWave"]
+type: "journal"
 ---

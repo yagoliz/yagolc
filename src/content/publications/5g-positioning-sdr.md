@@ -4,4 +4,6 @@ date: 2024-01-01
 authors: "I Palamà, Y Lizarribar, LM Monteforte, G Santaromita, S Bartoletti, et al."
 venue: "Computer Networks"
 doi: "10.1016/j.comnet.2024.110595"
+tags: ["5G", "localization", "SDR"]
+type: "journal"
 ---
