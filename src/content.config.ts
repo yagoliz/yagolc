@@ -22,6 +22,8 @@ const publications = defineCollection({
     link: z.string().url().optional(),
     doi: z.string().optional(),
     description: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+    type: z.enum(["journal", "conference", "thesis", "workshop", "preprint"]).optional(),
   }),
 });
 
