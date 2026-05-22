@@ -263,3 +263,75 @@ const allTypes = [...new Set(pubs.map((p) => p.data.type).filter(Boolean))].sort
     color: var(--color-accent);
   }
 </style>
+
+<script>
+  const searchInput = document.getElementById("pub-search");
+  const pubList = document.getElementById("pub-list");
+  const items = pubList ? Array.from(pubList.children) : [];
+  const resultCount = document.getElementById("result-count");
+  const noResults = document.getElementById("no-results");
+  const clearBtn = document.getElementById("clear-filters");
+  const chips = Array.from(document.querySelectorAll(".tag-chip"));
+  const total = items.length;
+
+  let debounceTimer;
+
+  function getActiveFilters(dimension) {
+    return chips
+      .filter((c) => c.dataset.filter === dimension && c.classList.contains("active"))
+      .map((c) => c.dataset.value);
+  }
+
+  function applyFilters() {
+    const query = searchInput.value.toLowerCase().trim();
+    const activeTags = getActiveFilters("tag");
+    const activeTypes = getActiveFilters("type");
+    const hasFilters = query || activeTags.length > 0 || activeTypes.length > 0;
+    let visible = 0;
+
+    items.forEach((li) => {
+      const title = li.dataset.title;
+      const authors = li.dataset.authors;
+      const venue = li.dataset.venue;
+      const tags = JSON.parse(li.dataset.tags);
+      const type = li.dataset.type;
+
+      const matchesSearch = !query ||
+        title.includes(query) ||
+        authors.includes(query) ||
+        venue.includes(query);
+
+      const matchesTags = activeTags.length === 0 ||
+        activeTags.some((t) => tags.includes(t));
+
+      const matchesType = activeTypes.length === 0 ||
+        activeTypes.includes(type);
+
+      const show = matchesSearch && matchesTags && matchesType;
+      li.style.display = show ? "" : "none";
+      if (show) visible++;
+    });
+
+    resultCount.textContent = `Showing ${visible} of ${total} publications`;
+    noResults.style.display = visible === 0 && total > 0 ? "" : "none";
+    clearBtn.style.display = hasFilters ? "" : "none";
+  }
+
+  chips.forEach((chip) => {
+    chip.addEventListener("click", () => {
+      chip.classList.toggle("active");
+      applyFilters();
+    });
+  });
+
+  searchInput.addEventListener("keyup", () => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(applyFilters, 150);
+  });
+
+  clearBtn.addEventListener("click", () => {
+    searchInput.value = "";
+    chips.forEach((c) => c.classList.remove("active"));
+    applyFilters();
+  });
+</script>
